@@ -9,20 +9,28 @@
 
   <!-- Le styles -->
   <style type="text/css">
-    body {
+    body, html {
       margin: 0;
-      background-video: url('https://redbarrelsgames.com/wp-content/uploads/2024/04/Outlast_whistleblower_loop.mp4');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Background video styling */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
     }
 
     .sidebar-nav {
       padding: 9px 0;
+      z-index: 1;
+      position: relative;
     }
 
     .nav-header.active {
@@ -66,6 +74,7 @@
       align-items: center;
       height: 100%;
       width: 100%;
+      position: relative;
     }
   </style>
   <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -84,6 +93,12 @@
   <link rel="shortcut icon" href="assets/ico/favicon.png">
 </head>
 <body>
+  <!-- Background video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://redbarrelsgames.com/wp-content/uploads/2024/04/Outlast_whistleblower_loop.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <div class="container-fluid centered-container">
     <div class="span3">
       <div class="well sidebar-nav">
